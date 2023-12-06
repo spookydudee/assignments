@@ -9,5 +9,27 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
-}
+    // Get the current timestamp in milliseconds
+    const startTime = new Date().getTime();
+  
+    // Initialize a variable to store the sum
+    let sum = 0;
+  
+    // Loop from 1 to n and add each number to the sum
+    for (let i = 1; i <= n; i++) {
+      sum += i;
+    }
+  
+    // Get the current timestamp in milliseconds after the loop completes
+    const endTime = new Date().getTime();
+  
+    // Calculate the time taken in seconds by dividing the time difference by 1000
+    const timeTaken = (endTime - startTime) / 1000;
+  
+    // Return the time taken in seconds
+    return timeTaken;
+  }
+  
+  console.log("Sum from 1-100:", calculateTime(100), "seconds");
+  console.log("Sum from 1-100000:", calculateTime(100000), "seconds");
+  console.log("Sum from 1-1000000000:", calculateTime(1000000000), "seconds");
