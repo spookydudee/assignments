@@ -21,19 +21,19 @@ class Calculator {
     this.result = 0;
   }
   add(number){
-    this.reuslt+=number;
+    this.result+=number;
   }
   subtract(number){
-    this.reuslt-=number;
+    this.result-=number;
   }
   multiply(number){
-    this.reuslt*=number;
+    this.result*=number;
   }
   divide(number){
-    if(number!==0) this.reuslt/=number;
-    else {
-      throw new Error("Cannot divide by zero");
+    if(number == 0 ) {
+      throw (new Error("Cannot divide by zero"));
     }
+    this.result/=number;
   }
   clear(){
     this.result=0;
@@ -43,7 +43,12 @@ class Calculator {
   }
 
   calculate(expression){
-      this.result = eval(expression);
+    this.result=0;
+      let ans = eval(expression);
+      if(!isFinite(ans) || isNaN(ans)){
+        throw(new Error("Error"));
+      }
+      return this.result=ans;
   }
 }
 
