@@ -20,15 +20,11 @@ class Todo {
   remove(indexOfTodo){
     if(indexOfTodo >=0 && indexOfTodo < this.list.length){
       this.list.splice(indexOfTodo,1);
-    }else {
-      console.log("Index out of bounds");
     }
   }
   update(index, updatedTodo){
     if(index>=0 && index<this.list.length){
       this.list[index]=updatedTodo;
-    }else {
-      console.log("Index out of bounds");
     }
   }
   getAll(){
@@ -38,7 +34,6 @@ class Todo {
     if(indexOfTodo>=0 && indexOfTodo<this.list.length){
       return this.list[indexOfTodo];
     }else {
-      console.log("Index out of bounds");
       return null;
     }
   }
