@@ -1,13 +1,6 @@
-function square(a){
-    return a*a;
-}
+let sum = 0;
 
-function cube(a){
-    return a*a*a;
-}
-
-function req(a, b,fn){
-    return fn(a) + fn(b);
-}
-
-console.log(req(3,3,square));
+setInterval(function(){
+    sum++;
+    console.log(sum);
+},1000);
