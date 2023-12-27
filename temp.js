@@ -108,26 +108,66 @@
 // main2()
 
 
-let sum = 0;
-let sum1 = 0;
-let sum2 = 0;
+// let sum = 0;
+// let sum1 = 0;
+// let sum2 = 0;
 
 
 
-setInterval(function(){
-    sum++;
-    if(sum/60 >=1 ){
-        sum1++;
-        sum=sum%60;
-    }
-    if(sum1/60 >=1 ){
-        sum2++;
-        sum1=sum1%60;
-    }
-    let x =y = z = "";
-    if(sum/10 < 1)z="0";
-    if(sum1/10 < 1)y="0";
-    if(sum2/10 < 1)x="0";
-    console.log(x+sum2+":"+y+sum1+":"+z+sum);
+// setInterval(function(){
+//     sum++;
+//     if(sum/60 >=1 ){
+//         sum1++;
+//         sum=sum%60;
+//     }
+//     if(sum1/60 >=1 ){
+//         sum2++;
+//         sum1=sum1%60;
+//     }
+//     let x =y = z = "";
+//     if(sum/10 < 1)z="0";
+//     if(sum1/10 < 1)y="0";
+//     if(sum2/10 < 1)x="0";
+//     console.log(x+sum2+":"+y+sum1+":"+z+sum);
 
-},1)
+// },1)
+
+function wait1(t) {
+    return new Promise(function(resolve){
+        setTimeout(function(){
+            resolve(t);
+        },t)
+    })
+
+}
+
+function wait2(t) {
+    return new Promise(function(resolve){
+        setTimeout(function(){
+            resolve(t);
+        },t)
+    })
+}
+
+function wait3(t) {
+    return new Promise(function(resolve){
+        setTimeout(function(){
+            resolve(t);
+        },t)
+    })
+}
+
+function calculateTime(t1, t2, t3) {
+    return new Promise(async function(resolve){
+    
+    const a = await wait1(t1);
+    const b = await wait2(t2);
+    const c = await wait3(t3);
+
+    const ans = a+b+c;
+    console.log(ans);
+        resolve(ans);
+    })
+}
+
+calculateTime(100,2000,3000)
